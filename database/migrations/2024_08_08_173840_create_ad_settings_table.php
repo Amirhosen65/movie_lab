@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('ad_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('ad');
+            $table->string('place');
+            $table->json('script')->nullable();
             $table->integer('ad_type');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

@@ -311,28 +311,28 @@ class MovieController extends Controller
     }
 
     public function status($id)
-{
-    $movie = Movie::find($id);
+    {
+        $movie = Movie::find($id);
 
-    $movie->update([
-        'status' => !$movie->status,
-        'updated_at' => now(),
-    ]);
+        $movie->update([
+            'status' => !$movie->status,
+            'updated_at' => now(),
+        ]);
 
-    return response()->json(['success_alert' => true, 'status' => $movie->status]);
-}
+        return response()->json(['success_alert' => true, 'status' => $movie->status]);
+    }
 
-public function feature($id)
-{
-    $movie = Movie::find($id);
+    public function feature($id)
+    {
+        $movie = Movie::find($id);
 
-    $movie->update([
-        'feature' => !$movie->feature, 
-        'updated_at' => now(),
-    ]);
+        $movie->update([
+            'feature' => !$movie->feature,
+            'updated_at' => now(),
+        ]);
 
-    return response()->json(['success_alert' => true, 'feature' => $movie->feature]);
-}
+        return response()->json(['success_alert' => true, 'feature' => $movie->feature]);
+    }
 
 
 }
